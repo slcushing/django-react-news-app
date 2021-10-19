@@ -1,5 +1,8 @@
-
 import './App.css';
+import RegistrationForm from './../Registration/RegistrationForm';
+
+
+
 
 function App() {
   return (
@@ -17,6 +20,7 @@ function App() {
         </nav>
 
       </header>
+      <RegistrationForm />
     </div>
   );
 }
