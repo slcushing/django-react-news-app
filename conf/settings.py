@@ -27,6 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     '127.0.0.1',
+    'https://full-stack-news-app-slcushing.herokuapp.com/',
 ]
 
 
