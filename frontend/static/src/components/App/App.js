@@ -1,5 +1,6 @@
 import './App.css';
 import RegistrationForm from './../Registration/RegistrationForm';
+import LoginForm from './../Login/LoginForm';
 
 
 
@@ -21,6 +22,7 @@ function App() {
 
       </header>
       <RegistrationForm />
+      <LoginForm />
     </div>
   );
 }
