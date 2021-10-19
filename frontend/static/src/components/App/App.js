@@ -1,6 +1,7 @@
 import './App.css';
 import RegistrationForm from './../Registration/RegistrationForm';
 import LoginForm from './../Login/LoginForm';
+import ProfileForm from '../Profile/ProfileForm';
 
 
 
@@ -8,7 +9,7 @@ import LoginForm from './../Login/LoginForm';
 function App() {
   return (
     <div className="App">
-      <header className="header">
+      {/* <header className="header">
         <h1>NEWS APP</h1>
         <nav>
           <ul className="nav-bar">
@@ -20,9 +21,10 @@ function App() {
           </ul>
         </nav>
 
-      </header>
+      </header> */}
       <RegistrationForm />
       <LoginForm />
+      <ProfileForm />
     </div>
   );
 }
