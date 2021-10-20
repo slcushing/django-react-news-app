@@ -1,7 +1,8 @@
-import {useState} from 'react'
-import Cookies from 'js-cookie'
+import {useState} from 'react';
+import {withRouter} from 'react-router-dom';
+import Cookies from 'js-cookie';
 
-function ProfileForm() {
+function ProfileForm(props) {
     const [profile, setProfile] = useState({
         alias:'',
         avatar: null,
@@ -28,7 +29,11 @@ function ProfileForm() {
         reader.readAsDataURL(file);
     }
 
-    const handleSumbit = (event) => {
+    function handleError(error) {
+        console.warn(error);
+    }
+
+    async function handleSumbit(event){
         event.preventDefault();
         const formData = new FormData();
         formData.append('alias', profile.alias);
@@ -40,8 +45,16 @@ function ProfileForm() {
                 'X-CSRFToken': Cookies.get('csrftoken'),
             },
             body: formData,
+        };
+
+        const response = await fetch('/api_v1/accounts/', options).catch(handleError);
+        if(!response) {
+            console.log(response);
+        } else {
+            const data = await response.json();
+            props.history.push('/');
         }
-    }
+    };
 
     return (
         <div className='ProfileForm'>
@@ -55,4 +68,4 @@ function ProfileForm() {
     )
 }
 
-export default ProfileForm
+export default withRouter(ProfileForm)

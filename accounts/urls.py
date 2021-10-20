@@ -2,7 +2,7 @@ from django.urls import path
 from .views import AccountListAPIView, AccountDetailAPIView
 
 
-app_name = 'api_v1'
+app_name = 'accounts'
 
 urlpatterns = [
     path('<int:pk>/', AccountDetailAPIView.as_view(), name='account_detail'),

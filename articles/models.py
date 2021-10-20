@@ -19,7 +19,7 @@ class Article(models.Model):
         (PUBLISHED, 'Published'),
         (REJECTED, 'Rejected'),
     ]
-    status_of_article = models.CharField(
+    status = models.CharField(
         max_length=4,
         choices=STATUS_OF_ARTICLE_CHOICES,
         default=DRAFT,
