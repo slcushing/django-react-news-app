@@ -1,4 +1,5 @@
 import {useState} from 'react'
+import {withRouter, Redirect} from 'react-router-dom'
 import Cookies from 'js-cookie'
 
 function LoginForm(props) {
@@ -37,11 +38,13 @@ function LoginForm(props) {
         } else {
             const data = await response.json();
             Cookies.set('Authorization', `Token ${data.key}`);
-            props.setState({
-                isAuth: true,
-                selection: 'profile',
-            });
+            props.setIsAuth(true);
+            props.history.push('/profile');
         }
+    }
+
+    if(props.isAuth) {
+        return <Redirect to='/profile' />
     }
 
 
@@ -78,4 +81,4 @@ function LoginForm(props) {
     )
 }
 
-export default LoginForm
+export default withRouter(LoginForm)
