@@ -6,7 +6,8 @@ import PrivateRoute from './../PrivateRoute/PrivateRoute';
 import Header from './../Header/Header';
 import RegistrationForm from './../Registration/RegistrationForm';
 import LoginForm from './../Login/LoginForm';
-import ProfileForm from '../Profile/ProfileForm';
+import ProfileForm from './../Profile/ProfileForm';
+import ArticleForm from './../Article/ArticleForm';
 
 
 
@@ -50,6 +51,7 @@ function App() {
           <ProfileForm />
         </PrivateRoute>
       </Switch>
+      <ArticleForm />
     </>
   );
 }

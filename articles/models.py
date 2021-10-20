@@ -6,6 +6,7 @@ class Article(models.Model):
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, null=True)
     title = models.CharField(max_length=255, null=True)
     body = models.TextField(null=True)
+    image = models.ImageField(upload_to='articles/', null=True)
     created_at = models.DateTimeField(auto_now_add=True, null=True)
     updated_at = models.DateTimeField(auto_now=False, null=True)
     # is_published = models.BooleanField(default=False)
