@@ -41,7 +41,7 @@ function App() {
       <Header />
       <Switch>
         <Route path='/registration'>
-          <RegistrationForm />
+          <RegistrationForm isAuth={isAuth} setIsAuth={setIsAuth}/>
         </Route>
         <Route path='/login'>
           <LoginForm isAuth={isAuth} setIsAuth={setIsAuth} />

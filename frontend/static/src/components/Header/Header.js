@@ -19,6 +19,9 @@ function Header(props) {
                         <li className='nav-item'>
                             <NavLink to='/login'> Login </NavLink>
                         </li>
+                        <li className='nav-item'>
+                            <NavLink to='/registration'> Register </NavLink>
+                        </li>
                     </ul>
                 </div>
             </div>

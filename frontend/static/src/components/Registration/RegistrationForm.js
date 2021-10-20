@@ -1,4 +1,5 @@
 import {useState} from 'react'
+import {withRouter, Redirect} from 'react-router-dom'
 import Cookies from 'js-cookie'
 
 function RegistrationForm(props){
@@ -43,12 +44,14 @@ function RegistrationForm(props){
             } else {
                 const data = await response.json();
                 Cookies.set('Authorization', `Token ${data.key}`);
-                props.setState({
-                    isAuth:true,
-                    selection: 'profile',
-                })
+                props.setIsAuth(true);
+                props.history.push('/profile');
             }
         }
+    }
+
+    if(props.isAuth) {
+        return <Redirect to='/profile' />
     }
 
 
@@ -112,4 +115,4 @@ function RegistrationForm(props){
     
 }
 
-export default RegistrationForm
+export default withRouter(RegistrationForm)
