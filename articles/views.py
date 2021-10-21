@@ -18,6 +18,9 @@ class ArticleListAPIView(generics.ListCreateAPIView):
         if category_selection is not None:
             queryset=queryset.filter(category=category_selection)
         return queryset
+    
+    def perform_create(self, serializer):
+        serializer.save(author=self.request.user)
 
 
 

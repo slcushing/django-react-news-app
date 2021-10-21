@@ -92,11 +92,11 @@ function ArticleForm(props) {
                     value={article.body}
                     onChange={handleChange}/>
             </div>
-            <select onChange={handleChange}>
+            <select onChange={handleChange} name="category" value={article.category}>
                     <option>Open this select menu</option>
                     <option value="NEWS">News</option>
                     <option value="HLTH">Health</option>
-                    <option value="SPRT">Sport</option>
+                    <option value="SPRT">Sports</option>
                     <option value="TECH">Tech</option>
                     <option value="OPIN">Opinion</option>
             </select>
