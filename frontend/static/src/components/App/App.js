@@ -8,6 +8,7 @@ import RegistrationForm from './../Registration/RegistrationForm';
 import LoginForm from './../Login/LoginForm';
 import ProfileForm from './../Profile/ProfileForm';
 import ArticleForm from './../Article/ArticleForm';
+import Home from './../Home/Home';
 
 
 
@@ -22,10 +23,8 @@ function App() {
       const response = await fetch('/rest-auth/user/');
       if(!response.ok) {
         setIsAuth(false);
-        history.push('/login');
       } else {
         setIsAuth(true);
-        history.push('/profile')
       }
     }
     checkAuth();
@@ -40,6 +39,7 @@ function App() {
   return (
     <>
       <Header />
+      <Home />
       <Switch>
         <Route path='/registration'>
           <RegistrationForm isAuth={isAuth} setIsAuth={setIsAuth}/>
@@ -50,15 +50,18 @@ function App() {
         <PrivateRoute path='/profile' isAuth={isAuth}>
           <ProfileForm />
         </PrivateRoute>
-        <Route >
-        <ArticleForm />
+        <PrivateRoute path='/articles/create' isAuth={isAuth}>
+          <ArticleForm />   
+        </PrivateRoute>
+        <Route path="/?:category">
+          <Home />
         </Route>
       </Switch>
     </>
   );
 }
 
-export default App;
+export default withRouter(App);
 
 
 
