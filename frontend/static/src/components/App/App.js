@@ -50,8 +50,10 @@ function App() {
         <PrivateRoute path='/profile' isAuth={isAuth}>
           <ProfileForm />
         </PrivateRoute>
+        <Route >
+        <ArticleForm />
+        </Route>
       </Switch>
-      <ArticleForm />
     </>
   );
 }

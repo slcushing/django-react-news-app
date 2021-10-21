@@ -70,6 +70,7 @@ function ArticleForm(props) {
                     type='file' 
                     name='image' 
                     onChange={handleImage}/>
+                <img src={preview} alt=''/>
             </div>
             <div className='form-group text-left mb-2'>
                 <label htmlFor='title'>Title</label>
