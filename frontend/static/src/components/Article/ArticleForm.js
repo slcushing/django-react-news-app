@@ -1,12 +1,14 @@
-import {useState} from 'react'
-import Cookies from 'js-cookie'
+import {useState} from 'react';
+import Cookies from 'js-cookie';
+import {withRouter} from 'react-router-dom'
+
+
 
 
 function ArticleForm(props) {
     const [article, setArticle] = useState({
         image: null,
         title: '',
-        author: '',
         body:'',
         category: '',
     });
@@ -43,14 +45,13 @@ function ArticleForm(props) {
         //MAP OVER ARTICLE WITH FOR...IN
         formData.append('image', article.image);
         formData.append('title', article.title);
-        formData.append('author', article.author);
         formData.append('body', article.body);
         formData.append('category', article.category);
 
         const options = {
             method: 'POST',
             headers: {
-                'X-CRSFToken': Cookies.get('csrftoken'),
+                'X-CSRFToken': Cookies.get('csrftoken'),
             },
             body: formData
         };
@@ -73,6 +74,7 @@ function ArticleForm(props) {
                     name='image' 
                     onChange={handleImage}/>
                 <img src={preview} alt=''/>
+
             </div>
             <div className='form-group text-left mb-2'>
                 <label htmlFor='title'>Title</label>
@@ -83,14 +85,6 @@ function ArticleForm(props) {
                     onChange={handleChange}/>
             </div>
             <div className='form-group text-left mb-2'>
-                <label htmlFor='author'>Author</label>
-                <input 
-                    type='text' 
-                    name='author' 
-                    value={article.author}
-                    onChange={handleChange}/>
-            </div>
-            <div className='form-group text-left mb-2'>
                 <label htmlFor='body'>Body</label>
                 <input 
                     type='text' 
@@ -98,13 +92,18 @@ function ArticleForm(props) {
                     value={article.body}
                     onChange={handleChange}/>
             </div>
-            <div nameClass='dropdown'>
-                
-            </div>
+            <select onChange={handleChange}>
+                    <option>Open this select menu</option>
+                    <option value="NEWS">News</option>
+                    <option value="HLTH">Health</option>
+                    <option value="SPRT">Sport</option>
+                    <option value="TECH">Tech</option>
+                    <option value="OPIN">Opinion</option>
+            </select>
                 <button type='submit'>Save as Edit</button>
                 <button type='submit'>Submit for Publication</button>
         </form>
     );
 }
 
-export default ArticleForm
+export default withRouter(ArticleForm)

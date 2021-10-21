@@ -14,7 +14,7 @@ function Header(props) {
                             <NavLink to='/'> Home </NavLink>
                         </li>
                         <li className='nav-item'>
-                            <NavLink to='/profile'> Profile </NavLink>
+                            <NavLink to='/'> Profile </NavLink>
                         </li>
                         <li className='nav-item'>
                             <NavLink to='/login'> Login </NavLink>

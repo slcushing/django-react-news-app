@@ -1,14 +1,23 @@
 import { useState,useEffect } from 'react';
-import { NavLink, withRouter } from 'react-router-dom'
+import { NavLink, withRouter, useLocation } from 'react-router-dom'
 
 function Home(props) {
     const [articles, setArticleList] = useState([]);
+    const location = useLocation();
+
+    const categories = {
+        news: 'NEWS',
+        health: 'HLTH',
+        sports: 'SPRT',
+        tech: 'TECH',
+        opinion: 'OPIN',
+    }
 
     useEffect(() => {
-        const category = props.match.params.category;
+        const category_selection = props.match.params.category;
         let url = '/api_v1/articles/';
-        if(category) {
-            url = `/api_v1/articles/?category=${category}`;
+        if(category_selection) {
+            url = `/api_v1/articles/?category=${categories[category_selection]}`;
         }
         async function getArticles(){
             const response = await fetch(url);
@@ -18,18 +27,11 @@ function Home(props) {
             setArticleList(data);
         }
         getArticles();
-    }, []);
-
-    // const articlesHTML = (
-    //     <div className='article'>
-    //         <h3>{props.title}</h3>
-    //         <p>{props.author}</p>
-    //         <p>{props.body}</p>
-    //     </div>
-    // )
+    }, [location]);
 
     const ArticleListHTML = articles.map(article =>
         <div key={article.id} className='article'>
+            <img className='fit-picture' src={article.image} alt=''/>
             <h3>{article.title}</h3>
             <p>{article.username}</p>
             <p>{article.body}</p>

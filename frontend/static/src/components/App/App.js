@@ -11,8 +11,6 @@ import ArticleForm from './../Article/ArticleForm';
 import Home from './../Home/Home';
 
 
-
-
 function App() {
   const [isAuth, setIsAuth] = useState(null)
 
@@ -39,7 +37,6 @@ function App() {
   return (
     <>
       <Header />
-      <Home />
       <Switch>
         <Route path='/registration'>
           <RegistrationForm isAuth={isAuth} setIsAuth={setIsAuth}/>
@@ -53,7 +50,7 @@ function App() {
         <PrivateRoute path='/articles/create' isAuth={isAuth}>
           <ArticleForm />   
         </PrivateRoute>
-        <Route path="/?:category">
+        <Route path="/:category?">
           <Home />
         </Route>
       </Switch>
@@ -62,19 +59,3 @@ function App() {
 }
 
 export default withRouter(App);
-
-
-
-/* <header className="header">
-        <h1>NEWS APP</h1>
-        <nav>
-          <ul className="nav-bar">
-            <li>World</li>
-            <li>U.S.</li>
-            <li>Sports</li>
-            <li>Tech</li>
-            <li>Opinion</li>
-          </ul>
-        </nav>
-
-      </header> */
