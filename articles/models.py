@@ -25,6 +25,24 @@ class Article(models.Model):
         choices=STATUS_OF_ARTICLE_CHOICES,
         default=DRAFT,
     )
+    NEWS = 'NEWS'
+    HEALTH = 'HLTH'
+    SPORTS = 'SPRT'
+    TECH = 'TECH'
+    OPINION = 'OPIN'
+    CATEGORY_OF_ARTICLE = [
+        (NEWS, 'News'),
+        (HEALTH, 'Health'),
+        (SPORTS, 'Sports'),
+        (TECH, 'Tech'),
+        (OPINION, 'Opinion'),
+    ]
+    category = models.CharField(
+        max_length=4,
+        choices=CATEGORY_OF_ARTICLE,
+        default = NEWS
+    )
+
 
 
 

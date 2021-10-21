@@ -8,6 +8,7 @@ function ArticleForm(props) {
         title: '',
         author: '',
         body:'',
+        category: '',
     });
     
 
@@ -44,6 +45,7 @@ function ArticleForm(props) {
         formData.append('title', article.title);
         formData.append('author', article.author);
         formData.append('body', article.body);
+        formData.append('category', article.category);
 
         const options = {
             method: 'POST',
@@ -95,6 +97,9 @@ function ArticleForm(props) {
                     name='body' 
                     value={article.body}
                     onChange={handleChange}/>
+            </div>
+            <div nameClass='dropdown'>
+                
             </div>
                 <button type='submit'>Save as Edit</button>
                 <button type='submit'>Submit for Publication</button>
