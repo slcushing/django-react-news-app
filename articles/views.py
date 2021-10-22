@@ -36,5 +36,11 @@ class ArticleDetailAPIView(generics.RetrieveUpdateDestroyAPIView):
 
 
 class ArticleListAdminAPIView(generics.ListCreateAPIView):
+    queryset = Article.objects.all()
+    serializer_class = ArticleSerializer
+    permission_classes = (IsAdminUser,)
+
+class ArticleDetailAdminAPIView(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Article.objects.all()
     serializer_class = ArticleSerializer
     permission_classes = (IsAdminUser,)
