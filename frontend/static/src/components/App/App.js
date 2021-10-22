@@ -8,6 +8,7 @@ import RegistrationForm from './../Registration/RegistrationForm';
 import LoginForm from './../Login/LoginForm';
 import ProfileForm from './../Profile/ProfileForm';
 import ArticleForm from './../Article/ArticleForm';
+import MyArticleList from './../Article/MyArticleList';
 import Home from './../Home/Home';
 
 
@@ -36,7 +37,7 @@ function App() {
   
   return (
     <>
-      <Header />
+      <Header isAuth={isAuth}/>
       <Switch>
         <Route path='/registration'>
           <RegistrationForm isAuth={isAuth} setIsAuth={setIsAuth}/>
@@ -50,6 +51,9 @@ function App() {
         <PrivateRoute path='/articles/create' isAuth={isAuth}>
           <ArticleForm />   
         </PrivateRoute>
+        <PrivateRoute path='/articles/myarticles/:status?' isAuth={isAuth}>
+          <MyArticleList/>
+         </PrivateRoute>
         <Route path="/:category?">
           <Home />
         </Route>

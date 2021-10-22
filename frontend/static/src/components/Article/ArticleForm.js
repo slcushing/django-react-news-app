@@ -29,9 +29,6 @@ function ArticleForm(props) {
         });
 
         const reader = new FileReader();
-        reader.onloadend = () => {
-            setPreview(reader.result);
-        }
         reader.readAsDataURL(file);
     }
 
@@ -47,6 +44,7 @@ function ArticleForm(props) {
         formData.append('title', article.title);
         formData.append('body', article.body);
         formData.append('category', article.category);
+        formData.append('status', event.target.value)
 
         const options = {
             method: 'POST',
@@ -66,7 +64,7 @@ function ArticleForm(props) {
     }
 
     return(
-        <form className='mt-3 col-6' onSubmit={handleSubmit}>
+        <form className='mt-3 col-6'>
             <div className='form-group text-left mb-2'>
                 <label htmlFor='image'>Image</label>
                 <input 
@@ -100,8 +98,8 @@ function ArticleForm(props) {
                     <option value="TECH">Tech</option>
                     <option value="OPIN">Opinion</option>
             </select>
-                <button type='submit'>Save as Edit</button>
-                <button type='submit'>Submit for Publication</button>
+                <button type='submit' value="DFT" onClick={handleSubmit}>Save as Draft</button>
+                <button type='submit' value="SUBM" onClick={handleSubmit}>Submit for Review</button>
         </form>
     );
 }

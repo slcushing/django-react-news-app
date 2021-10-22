@@ -1,13 +1,12 @@
-/* .App {
-  text-align: center;
-} */
-
-/* .nav-bar {
-  list-style-type: none;
-  display:flex;
-  justify-content: space-around;
-} */
-
 .fit-picture {
   width: 250px;
+}
+
+.home-header {
+  font-size: 60px;
+  text-align: center;
+}
+
+#secondary-nav {
+  column-gap: 10em;
 }

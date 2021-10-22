@@ -22,6 +22,16 @@ function Header(props) {
                         <li className='nav-item'>
                             <NavLink to='/registration'> Register </NavLink>
                         </li>
+                        {props.isAuth && (
+                            <>
+                            <li className='nav-item'>
+                                <NavLink to='/articles/create'> Submit Article </NavLink>
+                            </li>
+                            <li className='nav-item'>
+                                <NavLink to='/articles/myarticles'>My Articles</NavLink>
+                            </li>
+                            </>
+                        )}
                     </ul>
                 </div>
             </div>

@@ -43,8 +43,8 @@ function Home(props) {
         <>
         <header className='home-header'>Thoughtful Media Collective</header>
         <nav className='navbar navbar-expand-lg navbar-light bg-light'>
-            <div className='container'>
-                <ul className='navbar-nav ml-auto'>
+            <div className='container d-flex justify-content-center'>
+                <ul className='navbar-nav' id='secondary-nav'>
                     <li className='nav-item'>
                         <NavLink to='/news'>News</NavLink>
                     </li>
