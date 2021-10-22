@@ -14,7 +14,7 @@ function ArticleForm(props) {
     });
     
 
-    const [preview, setPreview] = useState('');
+    // const [preview, setPreview] = useState('');
 
     const handleChange = (event) => {
         const {name, value} = event.target;
@@ -71,7 +71,6 @@ function ArticleForm(props) {
                     type='file' 
                     name='image' 
                     onChange={handleImage}/>
-                <img src={preview} alt=''/>
 
             </div>
             <div className='form-group text-left mb-2'>

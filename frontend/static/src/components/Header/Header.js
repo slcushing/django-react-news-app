@@ -28,7 +28,7 @@ function Header(props) {
                                 <NavLink to='/articles/create'> Submit Article </NavLink>
                             </li>
                             <li className='nav-item'>
-                                <NavLink to='/articles/myarticles'>My Articles</NavLink>
+                                <NavLink to='articles/myarticles'>My Articles</NavLink>
                             </li>
                             </>
                         )}

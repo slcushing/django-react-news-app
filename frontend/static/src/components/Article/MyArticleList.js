@@ -3,18 +3,18 @@
 //ability to see "status"/"phase"
 
 import { useState, useEffect } from 'react'
-import { withRouter } from 'react-router-dom'
+import { NavLink, withRouter, useLocation } from 'react-router-dom'
 
-const status = {
-    draft: 'DFT',
-    submitted: 'SUBM',
-    publisted: 'PUBL',
-    rejected: 'REJ',
-}
 
 function MyArticleList(props) {
     const [myarticles, setMyArticleList] = useState([]);
-
+    const location = useLocation();
+    const status = {
+        draft: 'DFT',
+        submitted: 'SUBM',
+        published: 'PUBL',
+        rejected: 'REJ',
+    }
 
     useEffect(() => {
         const status_selection = props.match.params.status;
@@ -29,8 +29,8 @@ function MyArticleList(props) {
 
             setMyArticleList(data);
         }
-    getMyArticleList();
-    }, []);
+        getMyArticleList();
+    }, [location]);
 
     const MyArticleListHTML = myarticles.map(article =>
         <div key={article.id} className='article'>
@@ -43,7 +43,30 @@ function MyArticleList(props) {
 
     return (
         <>
-        {MyArticleListHTML}
+        <nav className='navbar navbar-expand-lg navbar-light bg-light'>
+            <div className='container d-flex justify-content-center'>
+                <ul className='navbar-nav' id='secondary-nav'>
+                    <li className='nav-item'>
+                        <NavLink to='/articles/myarticles/'>ALL</NavLink>
+                    </li>
+                    <li className='nav-item'>
+                        <NavLink to='/articles/myarticles/draft'>DRAFT</NavLink>
+                    </li>
+                    <li className='nav-item'>
+                        <NavLink to='/articles/myarticles/submitted'>SUBMITTED</NavLink>
+                    </li>
+                    <li className='nav-item'>
+                        <NavLink to='/articles/myarticles/published'>PUBLISHED</NavLink>
+                    </li>
+                    <li className='nav-item'>
+                        <NavLink to='/articles/myarticles/rejected'>REJECTED</NavLink>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <section className='my-article-section'>
+            {MyArticleListHTML}
+        </section>
         </>
     )
 } 
