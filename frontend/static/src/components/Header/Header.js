@@ -13,9 +13,9 @@ function Header(props) {
                         <li className='nav-item'>
                             <NavLink to='/'> Home </NavLink>
                         </li>
-                        <li className='nav-item'>
+                        {/* <li className='nav-item'>
                             <NavLink to='/'> Profile </NavLink>
-                        </li>
+                        </li> */}
                         <li className='nav-item'>
                             <NavLink to='/login'> Login </NavLink>
                         </li>
@@ -29,6 +29,13 @@ function Header(props) {
                             </li>
                             <li className='nav-item'>
                                 <NavLink to='articles/myarticles'>My Articles</NavLink>
+                            </li>
+                            </>
+                        )}
+                        {props.isAdmin && (
+                            <>
+                            <li className='nav-item'>
+                                <NavLink to='articles/admin'>Admin</NavLink>
                             </li>
                             </>
                         )}

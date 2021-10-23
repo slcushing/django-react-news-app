@@ -10,10 +10,12 @@ import ProfileForm from './../Profile/ProfileForm';
 import ArticleForm from './../Article/ArticleForm';
 import MyArticleList from './../Article/MyArticleList';
 import Home from './../Home/Home';
+import AdminArticleList from './../Article/AdminArticleList';
 
 
 function App() {
   const [isAuth, setIsAuth] = useState(null)
+  const [isAdmin, setIsAdmin] = useState(null)
 
   const history = useHistory();
 
@@ -27,6 +29,18 @@ function App() {
       }
     }
     checkAuth();
+  }, [history]);
+
+  useEffect(() => {
+    const checkAdmin = async () => {
+      const response = await fetch('/rest-auth/user/');
+      if(!response.ok) {
+        setIsAdmin(false);
+      } else {
+        setIsAdmin(true);
+      }
+    }
+    checkAdmin();
   }, [history]);
 
   if(isAuth === null) {
@@ -54,6 +68,9 @@ function App() {
         <PrivateRoute path='/articles/myarticles/:status?' isAuth={isAuth}>
           <MyArticleList/>
          </PrivateRoute>
+        <Route path='/articles/admin/:status?'isAdmin={isAdmin}>
+          <AdminArticleList/>
+        </Route>
         <Route path="/:category?">
           <Home />
         </Route>

@@ -1,7 +1,3 @@
-//pull down articles based on user that's signed in
-//ability to edit those articles
-//ability to see "status"/"phase"
-
 import { useState, useEffect } from 'react'
 import { NavLink, withRouter, useLocation } from 'react-router-dom'
 
