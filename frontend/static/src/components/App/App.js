@@ -31,17 +31,17 @@ function App() {
     checkAuth();
   }, [history]);
 
-  useEffect(() => {
-    const checkAdmin = async () => {
-      const response = await fetch('/rest-auth/user/');
-      if(!response.ok) {
-        setIsAdmin(false);
-      } else {
-        setIsAdmin(true);
-      }
-    }
-    checkAdmin();
-  }, [history]);
+  // useEffect(() => {
+  //   const checkAdmin = async () => {
+  //     const response = await fetch('/rest-auth/user/');
+  //     if(!response.ok) {
+  //       setIsAdmin(false);
+  //     } else {
+  //       setIsAdmin(true);
+  //     }
+  //   }
+  //   checkAdmin();
+  // }, [history]);
 
   if(isAuth === null) {
     return <Spinner animation='grow' variant='primary' />

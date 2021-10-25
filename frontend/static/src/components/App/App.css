@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 .fit-picture {
   width: 250px;
 }
@@ -7,6 +11,23 @@
   text-align: center;
 }
 
+#main-nav {
+  column-gap: 1em;
+}
+
+#main-nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-family: Helvetica;
+}
+
 #secondary-nav {
   column-gap: 10em;
+}
+
+#secondary-nav a{
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
 }
