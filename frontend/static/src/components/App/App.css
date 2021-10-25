@@ -2,8 +2,8 @@
   box-sizing: border-box;
 }
 
-.fit-picture {
-  width: 250px;
+img {
+  width:100%;
 }
 
 .home-header {
@@ -51,7 +51,21 @@ h3 {
   border-bottom: black solid 1px;
 }
 
+.main-body {
+  display: flex;
+  margin: 2em;
+  
+}
+
 .article-section {
-  width: 50%;
-  margin-top: 1em;
+  width: 75%;
+  border: black solid 1px;
+  padding: 2em;
+}
+
+.home-aside {
+  width: 25%;
+  border:black solid 1px;
+  margin-left: 1em;
+  background-color: #c7efcf
 }

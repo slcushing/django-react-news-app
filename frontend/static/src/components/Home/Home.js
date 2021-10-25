@@ -63,9 +63,12 @@ function Home(props) {
                 </ul>
             </div>
         </nav>
-        <section className='article-section'>
-            {ArticleListHTML}
-        </section>
+        <div className='main-body'>
+            <section className='article-section'>
+                {ArticleListHTML} 
+            </section>
+            <aside className='home-aside'>This is an aside.</aside>
+        </div>
         </>
     )
 }
