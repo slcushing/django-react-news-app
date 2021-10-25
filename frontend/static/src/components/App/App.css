@@ -6,6 +6,34 @@ img {
   width:100%;
 }
 
+#header-nav {
+  background-color: black;
+}
+
+.navbar-brand {
+  color: white;
+  font-family:'Courier New', Courier, monospace;
+}
+
+#main-nav a{
+  align-items: center;
+  border-radius: 10px;
+  padding: 5px 10px;
+  text-decoration: none;
+  background-color: white;
+  color:black;
+  text-decoration: none;
+  font-weight: bold;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 14px;
+}
+
+#main-nav a:hover {
+  background-color: black;
+  color:white;
+  border: solid white 1px;
+}
+
 .home-header {
   font-size: 60px;
   text-align: center;
@@ -25,14 +53,15 @@ h3 {
 #main-nav {
   column-gap: 1em;
   list-style-type: none; 
+  margin: 5px;
 }
-
+/* 
 #main-nav a {
   color:white;
   text-decoration: none;
   font-weight: bold;
   font-family: Arial, Helvetica, sans-serif;
-}
+} */
 
 #secondary-nav {
   column-gap: 10em;
@@ -43,6 +72,10 @@ h3 {
   text-decoration: none;
   font-weight: bold;
   font-family: 'Courier New', Courier, monospace;
+}
+
+#secondary-nav a:hover {
+  background-color: #c7efcf;
 }
 
 
@@ -69,6 +102,7 @@ h3 {
   border:black solid 1px;
   margin-left: 1em;
   background-color: #c7efcf;
+  padding-bottom: 1em;
 }
 
 h4 {
@@ -81,17 +115,6 @@ h4 {
   padding: .5em;
 }
 
-/* .home-aside p {
-  font-family: 'Courier New', Courier, monospace;
-  text-align: center;
-  background-color: white;
-  border: solid black 1px;
-  padding: .5em;
-  margin-left: 1em;
-  margin-right: 1em;
-
-} */
-
 .home-aside img {
   padding: 1em;
 }
@@ -102,7 +125,6 @@ h4 {
 }
 
 .home-aside a {
-  border: solid black 1px;
   border-radius: 10px;
   padding: 10px 20px 10px 20px;
   text-decoration: none;
@@ -110,6 +132,28 @@ h4 {
   background-color: black;
   margin-bottom: 5px;
 }
+
+.home-aside a:hover {
+  border: solid black 1px;
+  color: black;
+  background-color: white;
+  font-family:'Courier New', Courier, monospace;
+  font-weight: bold;
+}
+
+.my-article-section {
+  display: flex;
+  flex-direction: column;
+  padding: 2em;
+}
+
+.my-article {
+  border:black solid 1px;
+  padding: 2em;
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
 
 footer {
   background: black;

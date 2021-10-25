@@ -1,6 +1,6 @@
 import { useState,useEffect } from 'react';
 import { NavLink, withRouter, useLocation, Link} from 'react-router-dom'
-import RegistrationForm from '../Registration/RegistrationForm';
+
 
 function Home(props) {
     const [articles, setArticleList] = useState([]);
@@ -42,7 +42,7 @@ function Home(props) {
 
     return(
         <>
-        <header className='home-header'>Thoughtful Media Co.</header>
+        <header className='home-header'>Thoughtful News Co.</header>
         <nav className='navbar navbar-expand-lg navbar-light bg-light'id='secondary-full-bar'>
             <div className='container d-flex justify-content-center'>
                 <ul className='navbar-nav' id='secondary-nav'>
@@ -71,11 +71,11 @@ function Home(props) {
             <aside className='home-aside'>
                 <h4>Want to join our community?</h4>
                 <div><Link to='/registration'>REGISTER HERE</Link></div>
-                <h4>Thoughtful Media Co. Fueled By: </h4>
+                <h4>Thoughtful News Fueled By: </h4>
                 <img src='media/IMG_4844.jpeg' alt='coffee'/>
                 <div><a href='https://www.deathwishcoffee.com/' target="_blank" rel="noreferrer noopener" >Death Wish Coffee Co.</a></div>
                 <img src='media/doggos.jpeg' alt='dogs'/>
-                <div><a href="https://www.greenvillehumane.com/" target="_blank" rel="noreferrer noopener">Dogs</a></div>
+                <div><a href="https://www.greenvillehumane.com/" target="_blank" rel="noreferrer noopener">Doggos</a></div>
                 <img src='media/chicken-nuggets.jpeg' alt='Chicken Nuggets'/>
                 <div><a href="https://www.mcdonalds.com/us/en-us/product/chicken-mcnuggets-4-piece.html" target="_blank" rel="noreferrer noopener">Chickie Nuggies</a></div>
                 <img src='media/beer.jpeg' alt='Beer'/>

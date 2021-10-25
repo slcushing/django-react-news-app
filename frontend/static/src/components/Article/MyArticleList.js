@@ -28,12 +28,23 @@ function MyArticleList(props) {
         getMyArticleList();
     }, [location]);
 
+    async function handleSubmit(event) {
+        event.preventDefault();
+
+    }
+
     const MyArticleListHTML = myarticles.map(article =>
-        <div key={article.id} className='article'>
+        <div key={article.id} className='my-article'>
             <img className='fit-picture' src={article.image} alt=''/>
             <h3>{article.title}</h3>
             <p>{article.body}</p>
-            <p>{article.status}</p>
+            <p>Status: {article.status}</p>
+                {article.status === 'DFT' && (
+                    <>
+                    <button type="button">Edit Draft</button>
+                    <button type="submit" value="SUBM" onClick={handleSubmit}>Submit</button>
+                    </>
+                 )}
         </div>
     );
 
