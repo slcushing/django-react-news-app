@@ -9,14 +9,26 @@
 .home-header {
   font-size: 60px;
   text-align: center;
+  font-family: 'Courier New', Courier, monospace;
+  background-color: #c7efcf
+}
+
+h3 {
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+}
+
+.author{
+  font-style: italic;
 }
 
 #main-nav {
   column-gap: 1em;
+  list-style-type: none; 
 }
 
 #main-nav a {
-  color: white;
+  color:white;
   text-decoration: none;
   font-weight: bold;
   font-family: Helvetica;
@@ -30,4 +42,16 @@
   color: black;
   text-decoration: none;
   font-weight: bold;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+
+#secondary-full-bar {
+  border-top: black solid 1px;
+  border-bottom: black solid 1px;
+}
+
+.article-section {
+  width: 50%;
+  margin-top: 1em;
 }

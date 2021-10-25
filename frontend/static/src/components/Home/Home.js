@@ -33,7 +33,7 @@ function Home(props) {
         <div key={article.id} className='article'>
             <img className='fit-picture' src={article.image} alt=''/>
             <h3>{article.title}</h3>
-            <p>{article.username}</p>
+            <p className='author'>written by: {article.username}</p>
             <p>{article.body}</p>
         </div>
     );
@@ -41,8 +41,8 @@ function Home(props) {
 
     return(
         <>
-        <header className='home-header'>Thoughtful Media Collective</header>
-        <nav className='navbar navbar-expand-lg navbar-light bg-light'>
+        <header className='home-header'>Thoughtful Media Co.</header>
+        <nav className='navbar navbar-expand-lg navbar-light bg-light'id='secondary-full-bar'>
             <div className='container d-flex justify-content-center'>
                 <ul className='navbar-nav' id='secondary-nav'>
                     <li className='nav-item'>
