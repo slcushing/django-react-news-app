@@ -31,7 +31,7 @@ h3 {
   color:white;
   text-decoration: none;
   font-weight: bold;
-  font-family: Helvetica;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 #secondary-nav {
@@ -47,8 +47,8 @@ h3 {
 
 
 #secondary-full-bar {
-  border-top: black solid 1px;
-  border-bottom: black solid 1px;
+  border-top: black solid 3px;
+  border-bottom: black solid 3px;
 }
 
 .main-body {
@@ -65,7 +65,57 @@ h3 {
 
 .home-aside {
   width: 25%;
+  height: 100%;
   border:black solid 1px;
   margin-left: 1em;
-  background-color: #c7efcf
+  background-color: #c7efcf;
+}
+
+h4 {
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+  text-align: center;
+  margin: 1em;
+  background-color: white;
+  border: solid black 1px;
+  padding: .5em;
+}
+
+/* .home-aside p {
+  font-family: 'Courier New', Courier, monospace;
+  text-align: center;
+  background-color: white;
+  border: solid black 1px;
+  padding: .5em;
+  margin-left: 1em;
+  margin-right: 1em;
+
+} */
+
+.home-aside img {
+  padding: 1em;
+}
+
+.home-aside div {
+  display:flex;
+  justify-content: center;
+}
+
+.home-aside a {
+  border: solid black 1px;
+  border-radius: 10px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+  color: white;
+  background-color: black;
+  margin-bottom: 5px;
+}
+
+footer {
+  background: black;
+  color:white;
+  font-family: 'Courier New', Courier, monospace;
+  text-align: center;
+  padding: 1em;
+  font-weight:600;
 }

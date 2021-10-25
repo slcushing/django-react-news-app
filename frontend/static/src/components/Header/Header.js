@@ -34,13 +34,6 @@ function Header(props) {
                             </li>
                             </>
                         )}
-                        {props.isAdmin && (
-                            <>
-                            <li className='nav-item'>
-                                <NavLink to='articles/admin'>Admin</NavLink>
-                            </li>
-                            </>
-                        )}
                     </ul>
                 </div>
             </div>

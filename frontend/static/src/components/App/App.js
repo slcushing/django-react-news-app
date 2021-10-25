@@ -59,9 +59,6 @@ function App() {
         <Route path='/login'>
           <LoginForm isAuth={isAuth} setIsAuth={setIsAuth} />
         </Route>
-        <PrivateRoute path='/profile' isAuth={isAuth}>
-          <ProfileForm />
-        </PrivateRoute>
         <PrivateRoute path='/articles/create' isAuth={isAuth}>
           <ArticleForm />   
         </PrivateRoute>
