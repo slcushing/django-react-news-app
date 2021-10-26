@@ -49,7 +49,7 @@ function LoginForm(props) {
 
 
     return (
-        <form className='mt-3 col-6' onSubmit={handleSubmit}>
+        <form className='mt-3 col-4 offset-lg-4 login-form' onSubmit={handleSubmit}>
             <div className='form-group text-left mb-3'>
                 <label htmlFor='username'>Username</label>
                 <input
@@ -75,7 +75,7 @@ function LoginForm(props) {
                     value={user.password}
                 />
             </div>
-            <button type='submit' className='btn btn-success'>Login</button>
+            <button type='submit' className='btn' id='login-button'>Login</button>
 
         </form>
     )

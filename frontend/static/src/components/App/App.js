@@ -65,9 +65,9 @@ function App() {
         <PrivateRoute path='/articles/myarticles/:status?' isAuth={isAuth}>
           <MyArticleList/>
          </PrivateRoute>
-        <Route path='/articles/admin/:status?'isAdmin={isAdmin}>
+        {/* <Route path='/articles/admin/:status?'isAdmin={isAdmin}>
           <AdminArticleList/>
-        </Route>
+        </Route> */}
         <Route path="/:category?">
           <Home />
         </Route>

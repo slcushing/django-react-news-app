@@ -34,6 +34,7 @@ function Header(props) {
                             </li>
                             </>
                         )}
+                        {/* <li className='nav-item'> Logout </li> */}
                     </ul>
                 </div>
             </div>

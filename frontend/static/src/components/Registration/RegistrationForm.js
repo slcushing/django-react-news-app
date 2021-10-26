@@ -56,7 +56,8 @@ function RegistrationForm(props){
 
 
     return (
-        <form className='mt-3 col-6' onSubmit={handleSubmit}>
+        
+        <form className='mt-3 col-4 offset-lg-4 register-form' onSubmit={handleSubmit}>
             <div className='form-group text-left mb-3'>
                 <label htmlFor='username'>Username</label>
                 <input
@@ -109,7 +110,7 @@ function RegistrationForm(props){
                     value={user.password2}
                     />
             </div>
-            <button type='submit' className='btn btn-primary mt-3'>Register</button>
+            <button type='submit' className='btn mt-3' id='register-button'>Register</button>
         </form>
     )
     
