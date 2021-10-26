@@ -15,6 +15,10 @@ img {
   font-family:'Courier New', Courier, monospace;
 }
 
+.navbar-brand:hover {
+  color:#c7efcf;
+}
+
 #main-nav a{
   align-items: center;
   border-radius: 10px;
@@ -44,6 +48,7 @@ img {
 h3 {
   font-family: 'Courier New', Courier, monospace;
   font-weight: bold;
+  
 }
 
 .author{

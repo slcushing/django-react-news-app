@@ -34,7 +34,7 @@ function Home(props) {
         <div key={article.id} className='article'>
             <img className='fit-picture' src={article.image} alt=''/>
             <h3>{article.title}</h3>
-            <p className='author'>written by: {article.username}</p>
+            <p className='author'>Written by: {article.username}</p>
             <p>{article.body}</p>
         </div>
     );
