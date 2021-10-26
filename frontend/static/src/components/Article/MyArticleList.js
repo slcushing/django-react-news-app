@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { NavLink, withRouter, useLocation } from 'react-router-dom'
+import ArticleEdit from './ArticleEdit';
 
 
 function MyArticleList(props) {
@@ -28,24 +29,10 @@ function MyArticleList(props) {
         getMyArticleList();
     }, [location]);
 
-    async function handleSubmit(event) {
-        event.preventDefault();
 
-    }
 
     const MyArticleListHTML = myarticles.map(article =>
-        <div key={article.id} className='my-article'>
-            <img className='fit-picture' src={article.image} alt=''/>
-            <h3>{article.title}</h3>
-            <p>{article.body}</p>
-            <p>Status: {article.status}</p>
-                {article.status === 'DFT' && (
-                    <>
-                    <button type="button">Edit Draft</button>
-                    <button type="submit" value="SUBM" onClick={handleSubmit}>Submit</button>
-                    </>
-                 )}
-        </div>
+        <ArticleEdit key={article.id} {...article} />
     );
 
     return (
@@ -71,7 +58,7 @@ function MyArticleList(props) {
                 </ul>
             </div>
         </nav>
-        <section className='my-article-section'>
+        <section className='container d-flex justify-content-center my-article-section'>
             {MyArticleListHTML}
         </section>
         </>

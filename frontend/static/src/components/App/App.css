@@ -150,6 +150,7 @@ h4 {
   display: flex;
   flex-direction: column;
   padding: 2em;
+  width: 80%;
 }
 
 .my-article {
@@ -196,6 +197,35 @@ h4 {
   background-color: black;
   color: white;
 }
+
+/* #article-text input{
+  height: 200px;
+} */
+
+.article-form label {
+  margin-right: 5px;
+}
+
+.article-form {
+  border: solid black 1px;
+  padding: 2em;
+  background-color: #c7efcf;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+}
+
+.article-form button {
+  margin-right: 5px;
+  border: solid black 1px;
+  background-color: white;
+  font-weight: bold;
+}
+
+.article-form button:hover {
+  background-color: black;
+  color: white;
+}
+
 
 footer {
   background: black;

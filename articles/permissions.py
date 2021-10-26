@@ -6,5 +6,8 @@ class IsOwnerOrReadOnly(permissions.BasePermission):
         if request.method in permissions.SAFE_METHODS:
             return True
         
-        return obj.author == request.user & obj.author == request.draft
-        #build logic to only allow the change to occur on draft
+        return obj.author == request.user
+        
+
+# build logic to only allow the change to occur on draft
+# permissions with & statement

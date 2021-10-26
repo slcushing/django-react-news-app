@@ -6,7 +6,7 @@ from .permissions import IsOwnerOrReadOnly
 
 
 class ArticleListAPIView(generics.ListCreateAPIView):
-    queryset = Article.objects.order_by('-created_at')
+    queryset = Article.objects.order_by('created_at')
     serializer_class=ArticleSerializer
     permission_classes = (IsAuthenticatedOrReadOnly,)
 
@@ -30,7 +30,7 @@ class ArticleListAPIView(generics.ListCreateAPIView):
 
 
 class ArticleDetailAPIView(generics.RetrieveUpdateDestroyAPIView):
-    queryset = Article.objects.order_by('-created_at')
+    queryset = Article.objects.order_by('created_at')
     serializer_class = ArticleSerializer
     permission_classes = (IsOwnerOrReadOnly,)
 
