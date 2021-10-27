@@ -30,8 +30,6 @@ function AdminArticleList(props) {
 
     async function updateStatus(event) {
         event.preventDefault();
-        // console.log(adminarticles.article)
-        // const article = {...adminarticles.article};
         const status = event.target.value;
         const id = event.target.dataset.id;
         const options = {
@@ -50,26 +48,9 @@ function AdminArticleList(props) {
         }
     } 
 
-    // async function changeToRejected(event) {
-    //     event.preventDefault();
-    //     const options = {
-    //         method: 'PUT',
-    //         headers: {
-    //             "X-CSRFToken": Cookies.get("csrftoken"),
-    //         },
-    //         body: adminarticles.article,
-    //     };
-    //     const response = await fetch('/api_v1/articles/admin/${', options);
-    //     if(!response) {
-    //         console.log(response);
-    //     } else {
-    //         const data = await response.json();
-    //     }
-    // }
-
     
     const AdminArticleListHTML = adminarticles.map(article =>
-        <div key={article.id} className='article'>
+        <div key={article.id} className='my-article'>
             <img className='fit-picture' src={article.image} alt=''/>
             <h3>{article.title}</h3>
             <p>{article.username}</p>
@@ -77,14 +58,14 @@ function AdminArticleList(props) {
             <p>{article.status}</p>
             <button type="button"
                     data-id={article.id}
-                    className="btn btn-primary mt-3"
+                    className="btn btn-success mx-1"
                     name="SUBM"
                     value="PUBL"
                     onClick={updateStatus}
             > Publish </button>
             <button type="button"
                     data-id={article.id}
-                    className="btn btn-primary mt-3"
+                    className="btn btn-danger mx-1"
                     name="SUBM"
                     value="REJ"
                     onClick={updateStatus}
@@ -112,7 +93,7 @@ function AdminArticleList(props) {
                 </ul>
             </div>
         </nav>
-        <section className="admin-article-section">
+        <section className="admin-article-section container d-flex justify-content-center">
             {AdminArticleListHTML}
         </section>
         </>

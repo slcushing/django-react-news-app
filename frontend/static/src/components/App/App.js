@@ -52,7 +52,7 @@ function App() {
       const data = await response.json();
       Cookies.remove("Authorization");
       setUser({isAuth: false});
-      history.push("/login");
+      history.push("/");
     }
   }
 

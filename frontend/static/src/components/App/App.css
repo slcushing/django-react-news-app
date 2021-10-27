@@ -60,13 +60,26 @@ h3 {
   list-style-type: none; 
   margin: 5px;
 }
-/* 
-#main-nav a {
-  color:white;
+
+
+.logout {
+  align-items: center;
+  border-radius: 10px;
+  padding: 2.5px 10px;
   text-decoration: none;
+  background-color: white;
+  color:black;
   font-weight: bold;
-  font-family: Arial, Helvetica, sans-serif;
-} */
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 14px;
+  border-style: none;
+}
+
+.logout:hover {
+  background-color: black;
+  color:white;
+  border: solid white 1px;
+}
 
 #secondary-nav {
   column-gap: 10em;
@@ -160,6 +173,13 @@ h4 {
   margin-bottom: 2em;
 }
 
+.admin-article-section {
+  display: flex;
+  flex-direction: column;
+  padding: 2em;
+  width: 80%;
+}
+
 .register-form {
   border: solid black 1px;
   padding: 2em;
@@ -198,9 +218,6 @@ h4 {
   color: white;
 }
 
-/* #article-text input{
-  height: 200px;
-} */
 
 textarea {
   width: 100%;
@@ -228,6 +245,18 @@ textarea {
 .article-form button:hover {
   background-color: black;
   color: white;
+}
+
+.my-article button {
+  margin-right: 5px;
+  border: solid black 1px;
+  background-color: white;
+  font-weight: bold;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.my-article button:hover {
+  background-color: #c7efcf
 }
 
 

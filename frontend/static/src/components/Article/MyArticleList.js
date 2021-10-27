@@ -57,7 +57,6 @@ function MyArticleList(props) {
                         <NavLink to='/articles/myarticles/rejected'>REJECTED</NavLink>
                     </li>
                 </ul>
-                <button type="submit" className="logout" onClick={() => props.handleLogout()}>Logout</button>
             </div>
         </nav>
         <section className='container d-flex justify-content-center my-article-section'>

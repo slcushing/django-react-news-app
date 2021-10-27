@@ -48,8 +48,6 @@ class ArticleListAdminAPIView(generics.ListCreateAPIView):
             return Article.objects.filter(status=status_text)
             
 
-        # 
-
 class ArticleDetailAdminAPIView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Article.objects.all()
     serializer_class = ArticleSerializer

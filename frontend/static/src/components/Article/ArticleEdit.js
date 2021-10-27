@@ -98,8 +98,8 @@ function ArticleEdit(props) {
                     <option value="TECH">Tech</option>
                     <option value="OPIN">Opinion</option>
             </select>
-             <button type="submit" onClick={handleSubmit} value="DFT">Save as Draft</button>
-             <button type="submit" onClick={handleSubmit} value="SUBM">Save and Submit for Review</button>
+             <button type="submit" onClick={handleSubmit} value="DFT" id='edit-button'>Save as Draft</button>
+             <button type="submit" onClick={handleSubmit} value="SUBM" id='edit-button'>Save and Submit for Review</button>
         </form>
     } else {
         
