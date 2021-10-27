@@ -15,16 +15,18 @@ function Header(props) {
                         <li className='nav-item'>
                             <NavLink to='/'> Home </NavLink>
                         </li>
-                        {/* <li className='nav-item'>
-                            <NavLink to='/'> Profile </NavLink>
-                        </li> */}
-                        <li className='nav-item'>
-                            <NavLink to='/login'> Login </NavLink>
-                        </li>
-                        <li className='nav-item'>
-                            <NavLink to='/registration'> Register </NavLink>
-                        </li>
-                        {props.isAuth && (
+                        {!props.isAuth && (
+                            <>
+                                <li className='nav-item'>
+                                    <NavLink to='/login'> Login </NavLink>
+                                </li>
+                                <li className='nav-item'>
+                                    <NavLink to='/registration'> Register </NavLink>
+                                </li>
+                            </>
+                        )}
+
+                        {props.isAuth && !props.isAdmin && (
                             <>
                             <li className='nav-item'>
                                 <NavLink to='/articles/create'> Submit Article </NavLink>
@@ -34,7 +36,17 @@ function Header(props) {
                             </li>
                             </>
                         )}
-                        {/* <li className='nav-item'> Logout </li> */}
+                        {props.isAdmin && (
+                        
+                            <li className='nav-item'>
+                                <NavLink to='/articles/admin'>Admin</NavLink>
+                            </li>
+ 
+                        )}
+                        {props.isAuth && (
+                            <button type="submit" className="logout" onClick={() => props.handleLogout()}>Logout</button>
+                        )}
+                       
                     </ul>
                 </div>
             </div>

@@ -14,9 +14,9 @@ function AdminArticleList(props) {
 
     useEffect(() => {
         const status_selection = props.match.params.status;
-        let url = '/api_v1/articles/?status=ALL';
+        let url = '/api_v1/articles/admin/?status=ALL';
         if (status_selection) {
-            url = `/api_v1/articles/?status=${status[status_selection]}`
+            url = `/api_v1/articles/admin/?status=${status[status_selection]}`
         }
 
         async function getAdminArticles() {
@@ -28,16 +28,21 @@ function AdminArticleList(props) {
         getAdminArticles();
     }, [location]);
 
-    async function changeToPublished(event) {
+    async function updateStatus(event) {
         event.preventDefault();
+        // console.log(adminarticles.article)
+        // const article = {...adminarticles.article};
+        const status = event.target.value;
+        const id = event.target.dataset.id;
         const options = {
-            method: 'POST',
+            method: 'PUT',
             headers: {
-                "X-CSRFToken": Cookies.get("csfrtoken"),
+                "X-CSRFToken": Cookies.get("csrftoken"),
+                "Content-Type": 'application/json'
             },
-            body: adminarticles.article,
+            body: JSON.stringify({status}),
         };
-        const response = await fetch('/api_v1/articles/', options);
+        const response = await fetch(`/api_v1/articles/admin/${id}/`, options);
         if(!response) {
             console.log(response);
         } else {
@@ -45,33 +50,16 @@ function AdminArticleList(props) {
         }
     } 
 
-    async function changeToRejected(event) {
-        event.preventDefault();
-        const options = {
-            method: 'POST',
-            headers: {
-                "X-CSRFToken": Cookies.get("csrftoken"),
-            },
-            body: adminarticles.article,
-        };
-        const response = await fetch('/api_v1/articles/', options);
-        if(!response) {
-            console.log(response);
-        } else {
-            const data = await response.json();
-        }
-    }
-
-    // async function changeToArchived(event) {
+    // async function changeToRejected(event) {
     //     event.preventDefault();
     //     const options = {
-    //         method: 'POST',
+    //         method: 'PUT',
     //         headers: {
     //             "X-CSRFToken": Cookies.get("csrftoken"),
     //         },
     //         body: adminarticles.article,
     //     };
-    //     const response = await fetch('/api_v1/articles/', options);
+    //     const response = await fetch('/api_v1/articles/admin/${', options);
     //     if(!response) {
     //         console.log(response);
     //     } else {
@@ -88,16 +76,18 @@ function AdminArticleList(props) {
             <p>{article.body}</p>
             <p>{article.status}</p>
             <button type="button"
+                    data-id={article.id}
                     className="btn btn-primary mt-3"
                     name="SUBM"
                     value="PUBL"
-                    onClick={changeToPublished}
+                    onClick={updateStatus}
             > Publish </button>
             <button type="button"
+                    data-id={article.id}
                     className="btn btn-primary mt-3"
                     name="SUBM"
                     value="REJ"
-                    onClick={changeToRejected}
+                    onClick={updateStatus}
             > Reject </button>
         </div>
         );

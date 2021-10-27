@@ -42,7 +42,7 @@ function App() {
         "Content-Type": "application/json",
         "X-CSRFToken": Cookies.get("csrftoken"),
       },
-      body: JSON.stringify(props.user),
+      body: JSON.stringify(user),
     };
     const response = await fetch("/rest-auth/logout/", options);
     if (!response) {
@@ -67,7 +67,7 @@ function App() {
   
   return (
     <>
-      <Header isAuth={isAuth}/>
+      <Header isAuth={isAuth} isAdmin={isAdmin} handleLogout={handleLogout}/>
       <Switch>
         <Route path='/registration'>
           <RegistrationForm isAuth={isAuth} setUser={setUser}/>
@@ -78,10 +78,10 @@ function App() {
         <PrivateRoute path='/articles/create' isAuth={isAuth}>
           <ArticleForm />   
         </PrivateRoute>
-        <PrivateRoute path='/articles/myarticles/:status?' isAuth={isAuth} handleLogout={handleLogout}>
+        <PrivateRoute path='/articles/myarticles/:status?' isAuth={isAuth}>
           <MyArticleList/>
          </PrivateRoute>
-        <Route path='/articles/' isAdmin={isAdmin}>
+        <Route path='/articles/admin/:status?' isAdmin={isAdmin}>
           <AdminArticleList/>
         </Route>
         <Route path="/:category?">
