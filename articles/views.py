@@ -40,7 +40,10 @@ class ArticleListAdminAPIView(generics.ListCreateAPIView):
     serializer_class = ArticleSerializer
     permission_classes = (IsAdminUser,)
 
-class ArticleDetailAdminAPIView(generics.RetrieveUpdateDestroyAPIView):
-    queryset = Article.objects.all()
-    serializer_class = ArticleSerializer
-    permission_classes = (IsAdminUser,)
+    def get_queryset(self):
+        return Article.objects.exclude(status='DFT')
+
+# class ArticleDetailAdminAPIView(generics.RetrieveUpdateDestroyAPIView):
+#     queryset = Article.objects.all()
+#     serializer_class = ArticleSerializer
+#     permission_classes = (IsAdminUser,)

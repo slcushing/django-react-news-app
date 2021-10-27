@@ -1,6 +1,5 @@
 from rest_framework import serializers
 from rest_auth.serializers import UserDetailsSerializer
-
 from .models import Profile
 
 class AccountSerializer(serializers.ModelSerializer):
@@ -11,3 +10,4 @@ class AccountSerializer(serializers.ModelSerializer):
 class UserDetailsSerializer(UserDetailsSerializer):
     class Meta(UserDetailsSerializer.Meta):
         fields = ('id', 'username', 'email', 'is_active', 'is_staff', 'is_superuser',)
+        # overriding the fields that you want exposed

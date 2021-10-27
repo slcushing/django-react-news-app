@@ -54,7 +54,7 @@ function ArticleForm(props) {
             console.log(response);
         } else {
             const data = await response.json();
-            props.history.push('/');
+            props.history.push('/api_v1/articles/');
         }
     }
 
@@ -78,7 +78,7 @@ function ArticleForm(props) {
             </div>
             <div className='form-group text-left mb-4' id="article-text">
                 <label htmlFor='body'>Body</label>
-                <input 
+                <textarea 
                     type='text' 
                     name='body' 
                     value={article.body}

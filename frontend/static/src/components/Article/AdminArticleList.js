@@ -7,7 +7,6 @@ function AdminArticleList(props) {
     const [adminarticles, setAdminArticles] = useState([]);
     const location = useLocation();
     const status = {
-        draft: 'DFT',
         submitted: 'SUBM',
         published: 'PUBL',
         rejected: 'REJ',

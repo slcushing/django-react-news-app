@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react'
-import { NavLink, withRouter, useLocation } from 'react-router-dom'
+import { useState, useEffect } from 'react';
+import { NavLink, withRouter, useLocation } from 'react-router-dom';
 import ArticleEdit from './ArticleEdit';
 
 
@@ -35,6 +35,7 @@ function MyArticleList(props) {
         <ArticleEdit key={article.id} {...article} />
     );
 
+
     return (
         <>
         <nav className='navbar navbar-expand-lg navbar-light bg-light'>
@@ -56,6 +57,7 @@ function MyArticleList(props) {
                         <NavLink to='/articles/myarticles/rejected'>REJECTED</NavLink>
                     </li>
                 </ul>
+                <button type="submit" className="logout" onClick={() => props.handleLogout()}>Logout</button>
             </div>
         </nav>
         <section className='container d-flex justify-content-center my-article-section'>
