@@ -50,10 +50,10 @@ function AdminArticleList(props) {
 
     
     const AdminArticleListHTML = adminarticles.map(article =>
-        <div key={article.id} className='my-article'>
+        <div key={article.id} className='admin-article'>
             <img className='fit-picture' src={article.image} alt=''/>
             <h3>{article.title}</h3>
-            <p>{article.username}</p>
+            <p>Author: {article.username}</p>
             <p>{article.body}</p>
             <p>{article.status}</p>
             <button type="button"
