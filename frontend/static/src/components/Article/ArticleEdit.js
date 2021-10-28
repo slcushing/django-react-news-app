@@ -62,7 +62,7 @@ function ArticleEdit(props) {
     let html;
     if(isEditing) {
         html = 
-        <form className='mt-3 col-4 offset-lg-4 article-form'>
+        <form className='mt-3 col-12 article-form'>
             <div className='form-group text-left mb-3'>
                 <label htmlFor='image'>Image</label>
                 <input 

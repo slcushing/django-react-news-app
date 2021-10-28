@@ -42,7 +42,7 @@ function LoginForm(props) {
                 ...prevState,
                 isAuth: true,
             }))
-            props.history.push('/');
+            props.history.push('/articles/myarticles/');
         }
     }
 

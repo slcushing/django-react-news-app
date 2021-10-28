@@ -2,7 +2,7 @@ import { NavLink } from 'react-router-dom';
 
 function Header(props) {
     return(
-        <nav className='navbar navbar-expand-lg' id="header-nav">
+        <nav className='navbar navbar-expand-lg navbar-dark bg-dark' id="header-nav">
             <div className='container'>
                 <a className='navbar-brand' href='/'>Thoughtful Co.</a>
                 <button className='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarResponsive' aria-controls='navbarResponsive' aria-expanded='false' aria-label='Toggle navigation'>
